@@ -8,8 +8,8 @@ Simply clone this repository and open the project using Unity Hub. All assets an
 # Features:
 * Add object to scene by clicking on the button from the list of furniture to choose
 * Move the object in the scene and place it where you want
- * The object will have a temporary green colour to indicate that this location is available
- * If there is another object at the location it will have a colour of red and the user will not be able to place it there
+   * The object will have a temporary green colour to indicate that this location is available
+   * If there is another object at the location it will have a colour of red and the user will not be able to place it there
 * Rotate the object position prior to placing it
  * Press the R key to rotate the object 90 degrees clockwise
  * Press the T key to rotate the object 90 degrees counterclockwise
