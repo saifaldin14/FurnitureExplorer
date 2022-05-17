@@ -42,6 +42,13 @@ public static class SaveSystem
             Init();
         }
 
+        if (!File.Exists($"{directoryPath}{fileName}.json"))
+        {
+            StreamWriter writer = new StreamWriter($"{directoryPath}{fileName}.json");
+            writer.Close();
+            Debug.Log("No save file to load");
+        }
+
         StreamReader reader = new StreamReader($"{directoryPath}{fileName}.json");
         string jsonSave = reader.ReadLine();
         loadedData = JsonUtility.FromJson<T>(jsonSave);

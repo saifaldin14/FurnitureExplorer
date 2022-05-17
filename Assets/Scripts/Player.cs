@@ -34,28 +34,32 @@ public class Player : MonoBehaviour
             SaveSystem.Load(out SaveableObjectsInScene loadedObjectData, "Objects");
             SaveableObjectID[] objectsInScene = FindObjectsOfType<SaveableObjectID>();
 
-            for (int i = 0; i < objectsInScene.Length; i++)
+            if (loadedObjectData != null)
             {
-                Destroy(objectsInScene[i].gameObject);
-            }
 
-            for (int i = 0; i < loadedObjectData.SaveableObjects.Length; i++)
-            {
-                if (loadedObjectData.SaveableObjects[i] != null)
+                for (int i = 0; i < objectsInScene.Length; i++)
                 {
-                    if (SaveableObjectLibrary.SaveableObjects[loadedObjectData.SaveableObjects[i].id] != null)
+                    Destroy(objectsInScene[i].gameObject);
+                }
+
+                for (int i = 0; i < loadedObjectData.SaveableObjects.Length; i++)
+                {
+                    if (loadedObjectData.SaveableObjects[i] != null)
                     {
-                        Instantiate
-                        (
-                            SaveableObjectLibrary.SaveableObjects[loadedObjectData.SaveableObjects[i].id],
-                            loadedObjectData.SaveableObjects[i].position,
-                            loadedObjectData.SaveableObjects[i].rotation
-                        );
+                        if (SaveableObjectLibrary.SaveableObjects[loadedObjectData.SaveableObjects[i].id] != null)
+                        {
+                            Instantiate
+                            (
+                                SaveableObjectLibrary.SaveableObjects[loadedObjectData.SaveableObjects[i].id],
+                                loadedObjectData.SaveableObjects[i].position,
+                                loadedObjectData.SaveableObjects[i].rotation
+                            );
+                        }
                     }
                 }
-            }
 
-            Debug.Log("Loading Scene");
+                Debug.Log("Loading Scene");
+            }
         }
 
     }
