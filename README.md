@@ -1,6 +1,6 @@
 # FurnitureExplorer
  
- Furniture Explorer is an interactive and easy-to-use interio design system that allows the user to easily design and visualize a room from a set of pre-made furniture objects. 
+ Furniture Explorer is an interactive and easy-to-use interior design system that allows the user to easily design and visualize a room from a set of pre-made furniture objects. 
 
 # How to run the project
 Simply clone this repository and open the project using Unity Hub. All assets and scripts are already in the repository so no set up is required.
